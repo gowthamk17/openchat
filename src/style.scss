@@ -40,6 +40,7 @@
                 border: none;
                 border-bottom: 1px solid #a7bcff;
                 width: 250px;
+                outline: none;
 
                 &::placeholder {
                     color: rgb(175, 175, 175);
@@ -98,10 +99,205 @@
         .sidebar {
             flex: 1;
             background-color: #3e3c61;
+
+            .navbar {
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #2f2d52;
+                padding: 10px;
+                color: #ddddf7;
+
+                .logo {
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+
+                .userTab {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        height: 24px;
+                        width: 24px;
+                        border-radius: 50%;
+                        background-color: #ddddf7;
+                    }
+
+                    button {
+                        border: none;
+                        background-color: #5d5b8d;
+                        color: #ddddf7;
+                        padding: 6px;
+                    }
+                }
+
+            }
+
+            .search {
+                border-bottom: 1px solid gray;
+
+                input {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    padding: 10px;
+                    color: #ddddf7;
+                    
+                    &::placeholder {
+                        color: #ddddf7;
+                    }
+                }
+
+            }
+            .userTab {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #ddddf7;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #2f2d52;
+                }
+                
+                img {
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    background-color: #ddddf7;
+                }
+
+                .userContent {
+
+                    .userName {
+                        font-size: 18px;
+                    }
+                    p {
+                        font-size: 14px;
+                        color: lightgray;
+                    }
+                }
+            }
         }
 
         .chat {
             flex: 2;
+
+            .chatInfo {
+                background-color: #5d5b8d;
+                height: 50px;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                .userName {
+                    color: #ddddf7;
+                }
+            }
+
+            .messages {
+                height: calc(100% - 160px);
+                padding: 10px;
+                background-color: #ddddf7;
+                overflow-y: scroll;
+                .message {
+                    display: flex;
+                    margin-bottom: 20px;
+                    gap: 20px;
+
+                    .messageInfo {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        img {
+                            height: 40px;
+                            width: 40px;
+                            border-radius: 50%;
+                        }
+
+                        p {
+                            font-size: 10px;
+                            font-weight: 300;
+                        }
+                    }
+
+                    .messageContent {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        .text {
+                            background-color: white;
+                            padding: 10px;
+                            border-radius: 0px 10px 10px 10px;
+                            max-width: max-content;
+                            
+                        }
+
+                        img {
+                            // height: 600px;
+                            width: 50%;
+                        }
+                    }
+
+                    &.owner {
+                        flex-direction: row-reverse;
+
+                        .messageContent {
+                            align-items: flex-end;
+                            .text {
+                                background-color: #8da4f1;
+                                color: white;
+                                border-radius: 10px 0px 10px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            .input {
+                background-color: white;
+                height: 50px;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                input {
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    font-size: 18px;
+
+                    &::placeholder {
+                        color: lightgray;
+                    }
+                }
+
+                .send {
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    align-items: center;
+
+                    label {
+                        cursor: pointer;
+                    }
+
+                    button {
+                        cursor: pointer;
+                        padding: 10px 15px;
+                        border: none;
+                        background-color: #7b96ec;
+                        color: white;
+                        font-size: 14px;
+                        border-radius: 10px;
+                    }
+                }
+            }
         }
     }
 }
